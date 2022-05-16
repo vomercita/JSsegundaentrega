@@ -14,18 +14,21 @@ let largo= Number(prompt (" ¿De qué largo es la pileta? Coloque 20 o 25 o 50")
 
 const pileta =(metros, largo) =>{
     let total = metros / largo;
-    document.write (" El total de piletas es de " + total);
+    document.write (" CONVERSOR DE METROS A PILETAS:" + "<br>" + 
+                    " - Metros a nadar: " + metros + " metros." + "<br>" + 
+                    " - Largo de la pileta: " + largo + " metros." + "<br>" + 
+                    " El total de piletas es de: " + total + " piletas");
 }
 pileta (metros, largo);
-
-document.write ("<br>")
-
 
 //conversor de piletas a metros, usando otra funcion similar (pero ahora multiplica)
 
 const metro =(piletas, largo) =>{
     let total= piletas*largo;
-    document.write (" El total de metros es de " + total);
+    document.write ("<br>"+"<br>" + " CONVERSOR DE PILETAS A METROS: " + "<br>" + 
+                    " - Piletas a hacer: " + piletas + "<br>" + 
+                    " - Largo de la pileta: " + largo + " metros." + "<br>" + 
+                    " El total de metros es de: " + total+ " metros.");
 }
 let piletas= Number(prompt ("Cuántas piletas quieres hacer?"))
 
