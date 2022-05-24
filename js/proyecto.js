@@ -1,9 +1,11 @@
 /* 1- PREGUNTAR AL USUARIO COMO SE LLAMA Y SALUDARLO CON SU NOMBRE.
 2- PREGUNTARLE CUÁNTOS METROS QUIERE NADAR Y ENTONCES COLOCARLO EN CATEGORIA MOJARRITA, DELFIN O TIBURON
 3- DARLE 3 OPCIONES DE RUTINA PARA QUE ELIJA: VELOCIDAD, RESISTENCIA O MIXTA.
+4- SE MUESTRA EN CONSOLA LA RUTINA QUE LE CORRESPONDE A LO ELEGIDO (NIVEL Y TIPO)*/
 
-4- SE MUESTRA EN CONSOLA LA RUTINA QUE LE CORRESPONDE A LO ELEGIDO (NIVEL Y TIPO).
-*/
+const h1= document.createElement ("h1");
+h1.innerHTML= "Simulador de rutinas";
+document.body.appendChild (h1);
 
 //1- PREGUNTAR AL USUARIO COMO SE LLAMA Y SALUDARLO CON SU NOMBRE:
 let nombre = prompt ("¡¡Hola!! ¿Cómo te llamas?");
@@ -11,6 +13,7 @@ const saludo = () => {
     alert, document.write ("¡¡Bienvenid@ " + nombre + "!!" + "<br>");
 }
 saludo();
+
 
 /* 2- PREGUNTARLE CUÁNTOS METROS PUEDE NADAR Y ENTONCES COLOCARLO EN CATEGORIA MOJARRITA, DELFIN O TIBURON: y CICLO PARA Q REPITA el prompt SI LA OPCION ES INCORRECTA*/
 
@@ -43,37 +46,38 @@ const categoria = ()=> {
 }
 categoria();
 
-/*3- DARLE 3 OPCIONES DE RUTINA PARA QUE ELIJA: VELOCIDAD, RESISTENCIA O MIXTA. Y CICLO PARA Q REPITA el prompt SI LA OPCION ES INCORRECTA*/
+/*3- DARLE 3 OPCIONES DE RUTINA PARA QUE ELIJA: VELOCIDAD, RESISTENCIA O MIXTA. 
+Y CICLO PARA Q REPITA el prompt SI LA OPCION ES INCORRECTA*/
 
 let rutina = prompt (nombre+ `, elegí un tipo de rutina a realizar:
-                                    - velocidad
-                                    - resistencia
-                                    - mixta`);
+                                    1 - velocidad
+                                    2 - resistencia
+                                    3 - mixta`);
 const tipoRutina= ()=> {
-    if(rutina=="velocidad"){
+    if(rutina=="1"){
         alert ("Elegiste una rutina de velocidad")
     }
-    else if (rutina=="resistencia") {
+    else if (rutina=="2") {
         alert("Elegiste una rutina de resistencia")
     }
-    else if (rutina=="mixta"){
+    else if (rutina=="3"){
         alert ("Elegiste una rutina mixta")
     }
     else {
-        while (rutina!== "velocidad" && rutina!== "resistencia" && rutina!== "mixta" ){
+        while (rutina!== "1" && rutina!== "2" && rutina!== "3"){
             alert ("Error")
             rutina = prompt (nombre+ `, elegí un tipo de rutina a realizar:
-                                    - velocidad
-                                    - resistencia
-                                    - mixta`)
+                                    1 - velocidad
+                                    2 - resistencia
+                                    3 - mixta`)
         }
-        if(rutina=="velocidad"){
+        if(rutina=="1"){
             alert ("Elegiste una rutina de velocidad");
         }
-        else if (rutina=="resistencia") {
+        else if (rutina=="2") {
             alert("Elegiste una rutina de resistencia")
         }
-        else if (rutina=="mixta"){
+        else if (rutina=="3"){
             alert ("Elegiste una rutina mixta");
         }
     }
@@ -82,17 +86,17 @@ const tipoRutina= ()=> {
 tipoRutina();
 
 if((metros <= 1000) && (metros>0)){
-    document.write (" - Nivel: Mojarrita" + "<br>" + "   - Rutina elegida: "+ rutina);
+    document.write (" - Eres nivel: Mojarrita" + "<br>" + "   - Rutina elegida: "+ rutina);
 }
 else if ((metros>1000) && (metros <2000)){
-    document.write (" - Nivel: Delfín" + "<br>" + "   - Rutina elegida: "+ rutina);
+    document.write (" - Eres nivel: Delfín" + "<br>" + "   - Rutina elegida: "+ rutina);
 }
 else if (metros>2000){
-    document.write (" - Nivel: Tiburón" + "<br>" + "   - Rutina elegida: "+ rutina);
+    document.write (" - Eres nivel: Tiburón" + "<br>" + "   - Rutina elegida: "+ rutina);
 }
 
 
-//------------------- 2DO DESAFIO COMPLEMENTARIO. CON ARRAYS Y OBJETOS
+//2DO DESAFIO COMPLEMENTARIO. CON ARRAYS Y OBJETOS
 //4- SE MUESTRA POR CONSOLA LA RUTINA CORRESPONDIENTE A LAS ELECCIONES DEL USUARIO (NIVEL Y TIPO)
 
 const x1 = ["1x80","1x 120","1x 160","1x 200", "1x 400"];
@@ -240,31 +244,32 @@ rutinaMixta3.mixta();
 
 
 
-if((metros <= 1000) && (metros>0) && (rutina=="velocidad")){
+if((metros <= 1000) && (metros>0) && (rutina=="1")){
     console.log (rutinaVelocidad1)
 } 
-else if ((metros <= 1000) && (metros>0) && (rutina=="resistencia")){
+else if ((metros <= 1000) && (metros>0) && (rutina=="2")){
     console.log (rutinaResistencia1)
 }
-else if ((metros <= 1000) && (metros>0) && (rutina=="mixta")){
+else if ((metros <= 1000) && (metros>0) && (rutina=="3")){
     console.log (rutinaMixta1)
 }
-else if ((metros>1000) && (metros <2000) && (rutina=="velocidad")){
+else if ((metros>1000) && (metros <2000) && (rutina=="1")){
     console.log (rutinaVelocidad2)
 }
-else if ((metros>1000) && (metros <2000) && (rutina=="resistencia")){
+else if ((metros>1000) && (metros <2000) && (rutina=="2")){
     console.log (rutinaResistencia2)
 }
-else if ((metros>1000) && (metros <2000) && (rutina=="mixta")){
+else if ((metros>1000) && (metros <2000) && (rutina=="3")){
     console.log (rutinaMixta2)
 }
-else if ((metros>2000) && (rutina=="velocidad")){
+else if ((metros>2000) && (rutina=="1")){
     console.log (rutinaVelocidad3)
 }
-else if ((metros>2000) && (rutina=="resistencia")){
+else if ((metros>2000) && (rutina=="2")){
     console.log (rutinaResistencia3)
 }
-else if ((metros>2000) && (rutina=="mixta")){
+else if ((metros>2000) && (rutina=="3")){
     console.log (rutinaMixta3)
 }
 
+document.write ("<br>" + "<br>" + nombre + ", mira por consola la rutina que te ha tocado ---->");

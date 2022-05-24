@@ -1,5 +1,4 @@
 /*CONVERSOR DE PILETAS Y METROS:
-
 Para que el usuario pueda colocar cuántas piletas corresponden a tantos metros, en una pileta de 20m de largo,
 o bien en una pileta de 25m. de largo.
 
@@ -9,27 +8,40 @@ o bien en una pileta de 25m. de largo.
 y arroja el resultado en alert/write
 */
 
-let metros= Number(prompt (" ¿Cuántos metros quieres nadar? Ejemplo: 500 o 1800 o 2000"))
-let largo= Number(prompt (" ¿De qué largo es la pileta? Coloque 20 o 25 o 50"))
+const conversor = prompt (`Ingresa la opción que deseas: 
+                                1. Conversor de metros a piletas
+                                2. Conversor de piletas a metros`);
+if (conversor=="1"){
+    let metros= Number(prompt (" ¿Cuántos metros quieres nadar? Ejemplo: 500 o 1800 o 2000"))
+    let largo= Number(prompt (" ¿Cuántos metros mide tu pileta de natación? Coloca 18, 20, 25 o 50"))
 
 const pileta =(metros, largo) =>{
-    let total = metros / largo;
+    let total = parseInt(metros / largo);
     document.write (" CONVERSOR DE METROS A PILETAS:" + "<br>" + 
                     " - Metros a nadar: " + metros + " metros." + "<br>" + 
-                    " - Largo de la pileta: " + largo + " metros." + "<br>" + 
-                    " El total de piletas es de: " + total + " piletas");
+                    " - Largo de la pileta: " + largo + " metros." + "<br>" + "<br>" +
+                    " El TOTAL DE PILETAS es de: " + total + " piletas");
 }
-pileta (metros, largo);
+pileta (metros, largo); }
 
-//conversor de piletas a metros, usando otra funcion similar (pero ahora multiplica)
+else if (conversor=="2"){
+    
+    let piletas= Number(prompt ("Cuántas piletas quieres hacer?"))
+    let largo= Number(prompt (" ¿Cuántos metros mide tu pileta de natación? Coloca 18, 20, 25 o 50"))
 
-const metro =(piletas, largo) =>{
-    let total= piletas*largo;
+    const metro =(piletas, largo) =>{
+    let total= parseInt(piletas*largo);
     document.write ("<br>"+"<br>" + " CONVERSOR DE PILETAS A METROS: " + "<br>" + 
                     " - Piletas a hacer: " + piletas + "<br>" + 
-                    " - Largo de la pileta: " + largo + " metros." + "<br>" + 
-                    " El total de metros es de: " + total+ " metros.");
+                    " - Largo de la pileta: " + largo + " metros." + "<br>" + "<br>" +
+                    " El TOTAL DE METROS es de: " + total+ " metros.");
 }
-let piletas= Number(prompt ("Cuántas piletas quieres hacer?"))
-
 metro (piletas, largo);
+
+}
+else if (conversor!=="1" || conversor!=="2") {
+    prompt ("Error")
+};
+
+
+
