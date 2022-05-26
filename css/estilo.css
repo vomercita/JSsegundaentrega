@@ -1,17 +1,17 @@
 
-.index {
+#index {
     background-image: url(../img/1.webp); 
     background-attachment: fixed;
     background-size: cover;
 }
 
-.conversor {
+#conversor {
     background-image: url(../img/2.jpg); 
     background-attachment: fixed;
     background-size: cover;
 }
 
-.crud {
+#crud {
     background-image: url(../img/3.webp); 
     background-attachment: fixed;
     background-size: cover;

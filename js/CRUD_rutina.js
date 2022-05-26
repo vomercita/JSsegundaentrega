@@ -95,16 +95,42 @@ function armarRutina (){
     const rutinaNueva= new Rutina (nombre, entrada, bloque1, bloque2, bloque3, bloque4, bloque5, bloque6, afloje);
 //la agrego al array rutinaS
     rutinaS.push(rutinaNueva);
-// y se muestra por consola    
-        console.log (rutinaNueva);
-}
-    
-//opcion 2 listar rutinas en consola
-function listarRutina() {
-    console.log ("Listar rutinas: ")
+// y se muestra por consola 
+    console.log (rutinaNueva);
 
-    rutinaS.forEach((listado)=> {
-        console.log (listado)})
+    // y por DOM
+    const listado=document.createElement("ul")
+    listado.innerHTML=`- Nombre de tu rutina: ${rutinaNueva.aNombre} </br>
+                        - La entrada en calor es de: ${rutinaNueva.bEntrada}</br>
+                        - Bloque 1: ${rutinaNueva.bloque1}</br>
+                        - Bloque 2: ${rutinaNueva.bloque2}</br>
+                        - Bloque 3: ${rutinaNueva.bloque3}</br>
+                        - Bloque 4: ${rutinaNueva.bloque4}</br>
+                        - Bloque 5: ${rutinaNueva.bloque5}</br>
+                        - Bloque 6: ${rutinaNueva.bloque6}</br>
+                        - Afloje: ${rutinaNueva.cAfloje} `
+    document.body.appendChild (listado);
+   }
+    
+//opcion 2: Listar rutinas en DOM
+function listarRutina() {
+
+let listadoRutinas = document.createElement ("ul")
+
+    rutinaS.forEach ((rutina)=>{
+        const listado=document.createElement("li")
+        listado.innerHTML=`- ${rutina.aNombre}</br>
+                               - ${rutina.bEntrada}</br>
+                               - ${rutina.bloque1}</br>
+                               - ${rutina.bloque2}</br>
+                               - ${rutina.bloque3}</br>
+                               - ${rutina.bloque4}</br>
+                               - ${rutina.bloque5}</br>
+                               - ${rutina.bloque6}</br>
+                               - ${rutina.cAfloje} `
+        listadoRutinas.appendChild (listado);
+    })
+    document.body.appendChild (listadoRutinas)        
 }
 
 // opcion 3. BUSCAR RUTINAS QUE CONTENGAN ....--- EJ ESPALDA. Aparecen en consola
@@ -119,7 +145,16 @@ function buscarRutina (){
                                                 rutina.bloque5.indexOf(buscar)!==-1 ||  
                                                 rutina.bloque6.indexOf(buscar)!==-1);
     console.log (encontrada);
-}
+
+//para verlas en DOM:    
+    
+    encontrada.forEach ((buscadas)=>{
+    document.write ("<br/>",buscadas.aNombre, "<br/>", buscadas.bloque1,"<br/>", buscadas.bloque2,"<br/>", buscadas.bloque3,
+    "<br/>", buscadas.bloque4,"<br/>", buscadas.bloque5, "<br/>",buscadas.bloque6, "<br/>",buscadas.cAfloje, "<br/>")})
+
+} 
+
+
 
 // opcion 4 modificar uno o varios bloques de una rutina existente
 //1° buscar la rutina. 2° elegir el bloque a modificar. 3° modificar ese bloque elegido. 4° elegir otro bloque o salir
@@ -261,7 +296,5 @@ function modificarRutina (){
                
     }
 }
-
-
 
 

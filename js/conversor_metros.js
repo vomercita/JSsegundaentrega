@@ -17,10 +17,14 @@ if (conversor=="1"){
 
 const pileta =(metros, largo) =>{
     let total = parseInt(metros / largo);
-    document.write (" CONVERSOR DE METROS A PILETAS:" + "<br>" + 
-                    " - Metros a nadar: " + metros + " metros." + "<br>" + 
-                    " - Largo de la pileta: " + largo + " metros." + "<br>" + "<br>" +
-                    " El TOTAL DE PILETAS es de: " + total + " piletas");
+    
+    let lista= document.createElement ("ul")
+    document.body.appendChild (lista)
+    lista.innerHTML= `CONVERSOR DE METROS A PILETAS: <br/>
+                        - Metros a nadar: ${metros} metros. <br/>
+                        - Largo de la pileta: ${largo } metros. <br/>
+                        - El TOTAL DE PILETAS es de: ${ total} piletas.`
+   
 }
 pileta (metros, largo); }
 
@@ -31,10 +35,13 @@ else if (conversor=="2"){
 
     const metro =(piletas, largo) =>{
     let total= parseInt(piletas*largo);
-    document.write ("<br>"+"<br>" + " CONVERSOR DE PILETAS A METROS: " + "<br>" + 
-                    " - Piletas a hacer: " + piletas + "<br>" + 
-                    " - Largo de la pileta: " + largo + " metros." + "<br>" + "<br>" +
-                    " El TOTAL DE METROS es de: " + total+ " metros.");
+    
+    let lista2= document.createElement ("ul")
+    document.body.appendChild (lista2)
+    lista2.innerHTML= ` CONVERSOR DE PILETAS A METROS: <br/> 
+                        - Piletas a hacer: ${piletas} <br/>  
+                        - Largo de la pileta: ${largo} metros. <br/>
+                        - El TOTAL DE METROS es de: ${total} metros.`
 }
 metro (piletas, largo);
 

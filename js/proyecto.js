@@ -3,30 +3,29 @@
 3- DARLE 3 OPCIONES DE RUTINA PARA QUE ELIJA: VELOCIDAD, RESISTENCIA O MIXTA.
 4- SE MUESTRA EN CONSOLA LA RUTINA QUE LE CORRESPONDE A LO ELEGIDO (NIVEL Y TIPO)*/
 
-const h1= document.createElement ("h1");
-h1.innerHTML= "Simulador de rutinas";
-document.body.appendChild (h1);
 
 //1- PREGUNTAR AL USUARIO COMO SE LLAMA Y SALUDARLO CON SU NOMBRE:
+
 let nombre = prompt ("¡¡Hola!! ¿Cómo te llamas?");
-const saludo = () => { 
-    alert, document.write ("¡¡Bienvenid@ " + nombre + "!!" + "<br>");
-}
-saludo();
 
 
 /* 2- PREGUNTARLE CUÁNTOS METROS PUEDE NADAR Y ENTONCES COLOCARLO EN CATEGORIA MOJARRITA, DELFIN O TIBURON: y CICLO PARA Q REPITA el prompt SI LA OPCION ES INCORRECTA*/
 
 let metros = Number (prompt (nombre + ", ¿cuántos metros piensas que puedes nadar?"));
+let rutinaNivel
 const categoria = ()=> {
     if((metros <= 1000) && (metros>0)){
         alert ("¡Felicitaciones! eres nivel Mojarrita")
+        rutinaNivel = "Mojarrita"
     }
     else if ((metros>1000) && (metros <2000)){
         alert ("¡Felicitaciones! eres nivel Delfín")
+        rutinaNivel = "Delfín"
+
     }
-    else if (metros>2000){
+    else if (metros>=2000){
         alert ("¡Felicitaciones! eres nivel Tiburón")
+        rutinaNivel = "Tiburón"
     }
     else { 
         while (isNaN (metros)){
@@ -39,7 +38,7 @@ const categoria = ()=> {
         else if ((metros>1000) && (metros <2000)){
             alert ("¡Felicitaciones! eres nivel Delfín")
         }
-        else if (metros>2000){
+        else if (metros>=2000){
             alert ("¡Felicitaciones! eres nivel Tiburón")
         }
     }
@@ -85,15 +84,8 @@ const tipoRutina= ()=> {
 }   
 tipoRutina();
 
-if((metros <= 1000) && (metros>0)){
-    document.write (" - Eres nivel: Mojarrita" + "<br>" + "   - Rutina elegida: "+ rutina);
-}
-else if ((metros>1000) && (metros <2000)){
-    document.write (" - Eres nivel: Delfín" + "<br>" + "   - Rutina elegida: "+ rutina);
-}
-else if (metros>2000){
-    document.write (" - Eres nivel: Tiburón" + "<br>" + "   - Rutina elegida: "+ rutina);
-}
+
+
 
 
 //2DO DESAFIO COMPLEMENTARIO. CON ARRAYS Y OBJETOS
@@ -125,7 +117,7 @@ class Rutina{
     
 //menos de 1000    920
 const rutinaResistencia1 = new Rutina (   
-                                    "Resistencia Mojarrita: ",
+                                    "Resistencia Mojarrita ",
                                     "Entrada en calor: " + x1[1],
                                     "crol " + x2 [1],
                                     "pecho " + x1 [0],
@@ -138,7 +130,7 @@ const rutinaResistencia1 = new Rutina (
 
 //1000 -2000      1440                              
 const rutinaResistencia2 = new Rutina (   
-                                    "Resistencia Delfín: ",
+                                    "Resistencia Delfín ",
                                     "Entrada en calor: " + x1[2],
                                     "crol " + x2 [1],
                                     "pecho " + x2 [1],
@@ -150,7 +142,7 @@ const rutinaResistencia2 = new Rutina (
                                     );
 // mas de 2000       2800                             
 const rutinaResistencia3 = new Rutina (   
-                                    "Resistencia Tiburón: ",
+                                    "Resistencia Tiburón ",
                                     "Entrada en calor: " + x1[3],
                                     "crol " + x4 [2],
                                     "crol " + x2 [3],
@@ -162,7 +154,7 @@ const rutinaResistencia3 = new Rutina (
                                     );
 // menos de 1000     880                               
 const rutinaVelocidad1 = new Rutina (   
-                                        "Velocidad Mojarrita: ",
+                                        "Velocidad Mojarrita ",
                                         "Entrada en calor: " + x1[1],
                                         "patada " + x4[0],
                                         "crol " + x2[0],
@@ -174,7 +166,7 @@ const rutinaVelocidad1 = new Rutina (
                                         );
 //1000-2000      1520                                 
 const rutinaVelocidad2 = new Rutina (   
-                                        "Velocidad Delfín:",
+                                        "Velocidad Delfín",
                                         "Entrada en calor: " + x1[2],
                                         "patada " + x2 [1],
                                         "crol " + x4 [1],
@@ -186,7 +178,7 @@ const rutinaVelocidad2 = new Rutina (
                                         );
 // mas de 2000          2240                             
 const rutinaVelocidad3 = new Rutina (   
-                                        "Velocidad Tiburón:",
+                                        "Velocidad Tiburón",
                                         "Entrada en calor: " + x1[3],
                                         "patada " + x2[2],
                                         "crol " + x10 [1],
@@ -198,7 +190,7 @@ const rutinaVelocidad3 = new Rutina (
                                         );                                        
 //menos de 1000    880
 const rutinaMixta1 = new Rutina ( 
-                                    "Rutina Mixta Mojarrita:",
+                                    "Rutina Mixta Mojarrita",
                                     "Entrada en calor: " + x1[0],
                                     "patada " + x2 [0],
                                     "pullboy " + x2 [0],
@@ -210,7 +202,7 @@ const rutinaMixta1 = new Rutina (
                                     );
 //1000-2000   1680                                 
 const rutinaMixta2= new Rutina (  
-                                    "Rutina Mixta Delfín:",
+                                    "Rutina Mixta Delfín",
                                     "Entrada en calor: " + x1[2],
                                     "patada " + x1[1],
                                     "pullboy " + x1[1],
@@ -222,7 +214,7 @@ const rutinaMixta2= new Rutina (
                                     );
 //mas de 2000         2520                           
 const rutinaMixta3= new Rutina (  
-                                    "Rutina Mixta Tiburón:",
+                                    "Rutina Mixta Tiburón",
                                     "Entrada en calor: " + x1[3],
                                     "patada " + x1[3],
                                     "manoplas " + x8[1],
@@ -243,33 +235,56 @@ rutinaMixta2.mixta();
 rutinaMixta3.mixta();
 
 
+const rutinaS = [rutinaResistencia1, rutinaResistencia2, rutinaResistencia3,
+    rutinaVelocidad1,rutinaVelocidad2,rutinaVelocidad3,
+    rutinaMixta1, rutinaMixta2, rutinaMixta3];
 
-if((metros <= 1000) && (metros>0) && (rutina=="1")){
-    console.log (rutinaVelocidad1)
-} 
-else if ((metros <= 1000) && (metros>0) && (rutina=="2")){
+let tituloRutina;
+
+ if ((metros <= 1000) && (metros>0) && (rutina=="2")){
     console.log (rutinaResistencia1)
-}
-else if ((metros <= 1000) && (metros>0) && (rutina=="3")){
-    console.log (rutinaMixta1)
-}
-else if ((metros>1000) && (metros <2000) && (rutina=="1")){
-    console.log (rutinaVelocidad2)
+    tituloRutina= (rutinaS [0].aNombre)
 }
 else if ((metros>1000) && (metros <2000) && (rutina=="2")){
     console.log (rutinaResistencia2)
+    tituloRutina= (rutinaS [1].aNombre)
+}
+else if ((metros>=2000) && (rutina=="2")){
+    console.log (rutinaResistencia3)
+    tituloRutina= (rutinaS [2].aNombre)
+}
+else if((metros <= 1000) && (metros>0) && (rutina=="1")){
+    console.log (rutinaVelocidad1);
+    tituloRutina= (rutinaS [3].aNombre)
+} 
+else if ((metros>1000) && (metros <2000) && (rutina=="1")){
+    console.log (rutinaVelocidad2)
+    tituloRutina= (rutinaS [4].aNombre)
+}
+else if ((metros>=2000) && (rutina=="1")){
+    console.log (rutinaVelocidad3)
+    tituloRutina= (rutinaS [5].aNombre)
+}
+else if ((metros <= 1000) && (metros>0) && (rutina=="3")){
+    console.log (rutinaMixta1)
+    tituloRutina= (rutinaS [6].aNombre)
 }
 else if ((metros>1000) && (metros <2000) && (rutina=="3")){
     console.log (rutinaMixta2)
+    tituloRutina= (rutinaS [7].aNombre)
 }
-else if ((metros>2000) && (rutina=="1")){
-    console.log (rutinaVelocidad3)
-}
-else if ((metros>2000) && (rutina=="2")){
-    console.log (rutinaResistencia3)
-}
-else if ((metros>2000) && (rutina=="3")){
+else if ((metros>=2000) && (rutina=="3")){
     console.log (rutinaMixta3)
+    tituloRutina= (rutinaS [8].aNombre)
 }
 
-document.write ("<br>" + "<br>" + nombre + ", mira por consola la rutina que te ha tocado ---->");
+
+//DESAFIO COMPLEMENTARIO. DOM:
+
+const saludo = document.createElement ("h1");
+document.body.appendChild (saludo);
+saludo.innerHTML = `¡¡Bienvenid@ : ${nombre} !!<br/>
+                    - Eres nivel: ${rutinaNivel} </br>
+                    - Y esta es la rutina que te ha tocado: "${tituloRutina}"<br/> `
+
+
