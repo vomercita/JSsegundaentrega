@@ -5,14 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto JS</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilo.css">
 </head>
-<body id="index">
 
-    <h1> INICIO - Simulador de rutinas</h1>
-    <h2><a href="secciones/CRUD_rutina.html">Creador de rutinas</a></h2>
-    <h2><a href="secciones/conversor_metros.html">Conversor de metros</a></h2>
+<body id="index">
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid g-0 d-flex">
+                <a class="navbar-brand" href="#"></a>
+                <button id="hamburguesa" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse d-flex " id="navbarNavAltMarkup">
+                    <div class="navbar-nav mx-auto d-flex">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="secciones/CRUD_rutina.html">Rutinas</a>
+                        <a class="nav-link" href="secciones/conversor_metros.html">Conversor</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+   <form id="formIndex" action="" class="mt-5 container-fluid d-flex flex-column align-items-center g-0">
+        <div class="my-4">
+            <label for="">"¡¡Hola!! ¿Cómo te llamas?"</label>
+            <input type="text" id="inputNombre">
+            <button id="btnNombre">Enviar</button>
+        </div>
+        
+        <div class="my-4">
+            <label for="">¿Cuántos metros quieres nadar?</label>
+            <input type="number" id="inputMetros">
+            <button id="btnMetros">Enviar</button>
+        </div>
+        
+        <div class="my-4">
+            <label for=""> Elegí un tipo de rutina a realizar</label>
+            <button id="btnResistencia">Resistencia</button>
+            <button id="btnVelocidad">Velocidad</button>
+            <button id="btnMixta">Mixta</button>
+        </div>
+    </form>
+<div class="d-flex flex-column w-75 mx-auto g-0">
+    <h2 id="bienvenida" class="my-0"> </h2>
+
+    <h2 id="niveles" class="my-0"> </h2>
+
+    <h2 id="tipo" class="my-0"> </h2>
+</div>
+
     
     <script src="js/proyecto.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 </html>
