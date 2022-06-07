@@ -4,73 +4,23 @@
 3 modificar y eliminar, aun no.
 */
 
-const x1 = ["1 x 80","1 x 120","1 x 160","1 x 200", "1 x 400"]; 
-const x2 = ["2 x 40","2 x 80","2 x 100", "2 x 200"]; 
-const x4 = ["4 x 40","4 x 80","4 x 100", "4 x 200"];
-const x5 = ["5 x 40","5 x 80"]; 
-const x8 = ["8 x 20","8 x 40","8 x 80"]; 
-const x10 = ["10 x 20","10 x 40","10 x 80"];
-
-class Rutina{
-    constructor (nombre, entrada, bloque1, bloque2, bloque3, bloque4, bloque5, bloque6, afloje) {
-        this.aNombre=nombre;
-        this.bEntrada=entrada;
-        this.bloque1=bloque1;
-        this.bloque2=bloque2;
-        this.bloque3=bloque3;
-        this.bloque4=bloque4;
-        this.bloque5=bloque5;
-        this.bloque6=bloque6;
-        this.cAfloje=afloje;
+//Nombre guardado en storage
+function saludar(){
+    const saludo = document.getElementById ("crudNombre");
+    saludo.innerHTML = ` ${localStorage.getItem ("nombre")}<br/>
+                        Elige alguna de estas opciones`
     }
-}  
-const rutinaResistencia1 = new Rutina (   
-"Resistencia Mojarrita: ", "libre" + "<br>" + x1[1],"crol " + "<br>" + x2 [1],"pecho " + "<br>"+ x1 [0],"crol "+ "<br>" + x1 [0],
-"espalda " + "<br>"+ x1 [0],"crol " + "<br>"+ x2 [1],"crol " + "<br>"+ x2 [0], "libre" + "<br>" + x1 [2]);
-                         
-const rutinaResistencia2 = new Rutina (   
-"Resistencia Delfín: ","libre" + "<br>" + x1[2],"crol "+ "<br>" + x2 [1], "pecho "+ "<br>" + x2 [1],"crol " + "<br>"+ x2 [2],
-"espalda " + "<br>"+ x2 [1],"crol "+ "<br>" + x2 [2], "crol "+ "<br>" + x1 [3],"libre" + "<br>" + x1 [3]);
-                           
-const rutinaResistencia3 = new Rutina (   
- "Resistencia Tiburón: ","libre" + "<br>" + x1[3],"crol "+ "<br>" + x4 [2],"crol " + "<br>"+ x2 [3],"pecho "+ "<br>" + x2 [3],
- "espalda "+ "<br>" + x2 [3],"crol "+ "<br>" + x2 [3],"crol "+ "<br>" + x1 [4],"libre" + "<br>" + x1 [3]);
-                             
-const rutinaVelocidad1 = new Rutina (   
-"Velocidad Mojarrita: ","libre" + "<br>" + x1[1],"patada "+ "<br>" + x4[0],"crol "+ "<br>" + x2[0],"velocidad "+ "<br>"+ x2 [0],
-"crol "+ "<br>" + x2[0],"velocidad "+ "<br>" + x4[0],"crol " + "<br>"+ x2[0], "libre" + "<br>" +x1 [1]);
-                               
-const rutinaVelocidad2 = new Rutina (   
-"Velocidad Delfín:","libre" + "<br>" +  x1[2],"patada "+ "<br>" + x2 [1],"crol " + "<br>"+ x4 [1],"velocidad " + "<br>"+ x4 [0],
-"velocidad "+ "<br>" + x2 [1],"patada "+ "<br>" + x2 [1],"velocidad "+ "<br>" + x5[0], "libre" + "<br>" + x1 [3]);
-                          
-const rutinaVelocidad3 = new Rutina (   
-"Velocidad Tiburón:","libre" + "<br>" + x1[3],"patada "+ "<br>" + x2[2],"crol " + "<br>"+ x10 [1],"velocidad "+ "<br>" + x5 [0],
-"velocidad "+ "<br>" + x5 [1],"manoplas "+ "<br>" + x8[1],"velocidad "+ "<br>" + x8[1], "libre" + "<br>" + x1 [3]);                                        
+saludar();
 
-const rutinaMixta1 = new Rutina ( 
-"Rutina Mixta Mojarrita:","libre" + "<br>" + x1[0],"patada "+ "<br>" + x2 [0],"pullboy "+ "<br>" + x2 [0],"crol "+ "<br>" + x4[0],
-"pecho "+ "<br>" + x2 [0],"espalda " + "<br>"+ x2[0],"estilo "+ "<br>" + x5 [0], "libre" + "<br>" +x1 [1]);
-                                 
-const rutinaMixta2= new Rutina (  
-"Rutina Mixta Delfín:","libre" + "<br>" + x1[2],"patada "+ "<br>" + x1[1],"pullboy "+ "<br>" + x1[1],"manoplas "+ "<br>" + x2 [1],
-"crol " + "<br>"+ x5 [0],"medley "+ "<br>" + x4 [1],"estilo "+ "<br>" + x4 [2],"libre" + "<br>" +x1 [3]);
-                        
-const rutinaMixta3= new Rutina (  
-"Rutina Mixta Tiburón:","libre" + "<br>" + x1[3],"patada " + "<br>" + x1[3],"manoplas " + "<br>" + x8[1],"crol " + "<br>" + x10 [1],
-"medley " + "<br>" + x5 [1],"crol " + "<br>" + x5 [1],"medley " + "<br>" + x5 [1],"libre" + "<br>" +x1 [3]);
-
-//ARRAY RUTINAS DE OBJETOS RUTINA
-const rutinaS = [rutinaResistencia1, rutinaResistencia2, rutinaResistencia3,
-                 rutinaVelocidad1,rutinaVelocidad2,rutinaVelocidad3,
-                 rutinaMixta1, rutinaMixta2, rutinaMixta3];
-
-//boton 1: Listar rutinas en DOM
+//BOTON 1: Listar rutinas en DOM
 
 let botonListar = document.getElementById ("botonListar")
 botonListar.innerHTML = "Listar rutinas";
-botonListar.addEventListener ("click", ()=>{listarRutina()});
 
+botonListar.addEventListener ("click", (e)=>{
+    listarRutina(),
+    e.preventDefault()
+});
 
 function listarRutina() {
 
@@ -122,11 +72,11 @@ function listarRutina() {
         const tablaRow = document.createElement("tr");
 
         let tablaTd = document.createElement("td");
-        tablaTd.innerHTML=`${rutina.aNombre}`;
+        tablaTd.innerHTML=`${rutina.Nombre}`;
         tablaRow.appendChild(tablaTd)
         
         tablaTd = document.createElement("td");
-        tablaTd.innerHTML=`${rutina.bEntrada}`;
+        tablaTd.innerHTML=`${rutina.Entrada}`;
         tablaRow.appendChild(tablaTd)
 
         tablaTd = document.createElement("td");
@@ -154,95 +104,237 @@ function listarRutina() {
         tablaRow.appendChild(tablaTd)
         
         tablaTd = document.createElement("td");
-        tablaTd.innerHTML=`${rutina.cAfloje}`;
+        tablaTd.innerHTML=`${rutina.Afloje}`;
         tablaRow.appendChild(tablaTd)
 
         listadoRutinas.appendChild (tablaRow);
         tablaRow.setAttribute ("id", "filas")
-        
-
     })
     document.body.appendChild (listadoRutinas);
+    
+    let mostrarMenu=document.getElementById ("formularioArmarRutina")
+    mostrarMenu.setAttribute ("style", "display:none")
+
 }
-//boton 2 armar rutina
+
+
+
+//BOTON 2: Armar rutina
 
 let botonArmar = document.getElementById ("botonArmar")
 botonArmar.innerHTML = "Armar una rutina";
 
-botonArmar.addEventListener ("click", ()=> {armarRutina()}); 
-   
-function armarRutina (){
-    //pide datos para armar la rutina    
-    let nombre = prompt ("Ingresa un nombre para tu nueva rutina")
-    let entrada = prompt ("Ingresa la entrada en calor")
-    let bloque1 = prompt ("Ingresa el bloque 1 ")
-    let bloque2 = prompt ("Ingresa el bloque 2 ")
-    let bloque3 = prompt ("Ingresa el bloque 3 ")
-    let bloque4 = prompt ("Ingresa el bloque 4 ")
-    let bloque5 = prompt ("Ingresa el bloque 5 ")
-    let bloque6 = prompt ("Ingresa el bloque 6 ")
-    let afloje = prompt ("Ingresa el afloje ")
-    
+botonArmar.addEventListener ("click", (e)=> {
+    mostrarMenuArmar(), 
+    e.preventDefault()
+}); 
+
+function mostrarMenuArmar(){
+    let mostrarMenu=document.getElementById ("formularioArmarRutina")
+    mostrarMenu.setAttribute ("style", "display:inline")
+}
+let botonRutinaArmada= document.getElementById ("botonRutinaArmada");
+botonRutinaArmada.addEventListener ("click", (e)=>{
+    e.preventDefault(), 
+    mostrarArmada(),
+    borrarMenuArmar()
+});
+function borrarMenuArmar(){
+    let borrarMenu=document.getElementById ("formularioArmarRutina")
+    borrarMenu.setAttribute ("style", "display:none")
+}
+function mostrarArmada (){
+    let tituloNueva= document.getElementById ("inputTitulo").value;
+    let tituloh2= document.createElement ("h2")
+    tituloh2.innerHTML= `El título de tu nueva rutina es: "${tituloNueva}"`;
+    document.body.appendChild (tituloh2)
+
+    let entradaNueva= document.getElementById ("inputEntrada").value;
+    let entradah2= document.createElement ("h2")
+    entradah2.innerHTML= `La entrada en calor es: ${entradaNueva}`;
+    document.body.appendChild (entradah2)
+
+    let bloque1Nueva= document.getElementById ("inputB1").value;
+    let bloque1h2= document.createElement ("h2")
+    bloque1h2.innerHTML= `El bloque 1 es: ${bloque1Nueva}`;
+    document.body.appendChild (bloque1h2)
+
+    let bloque2Nueva= document.getElementById ("inputB2").value;
+    let bloque2h2= document.createElement ("h2")
+    bloque2h2.innerHTML= `El bloque 2 es: ${bloque2Nueva}`;
+    document.body.appendChild (bloque2h2)
+
+    let bloque3Nueva= document.getElementById ("inputB3").value;
+    let bloque3h2= document.createElement ("h2")
+    bloque3h2.innerHTML= `El bloque 3 es: ${bloque3Nueva}`;
+    document.body.appendChild (bloque3h2)
+
+    let bloque4Nueva= document.getElementById ("inputB4").value;
+    let bloque4h2= document.createElement ("h2")
+    bloque4h2.innerHTML= `El bloque 4 es: ${bloque4Nueva}`;
+    document.body.appendChild (bloque4h2)
+
+    let bloque5Nueva= document.getElementById ("inputB5").value;
+    let bloque5h2= document.createElement ("h2")
+    bloque5h2.innerHTML= `El bloque 5 es: ${bloque5Nueva}`;
+    document.body.appendChild (bloque5h2)
+
+    let bloque6Nueva= document.getElementById ("inputB6").value;
+    let bloque6h2= document.createElement ("h2")
+    bloque6h2.innerHTML= `El bloque 6 es: ${bloque6Nueva}`;
+    document.body.appendChild (bloque6h2)
+
+    let aflojeNueva= document.getElementById ("inputAfloje").value;
+    let aflojeh2= document.createElement ("h2")
+    aflojeh2.innerHTML= `El afloje es: ${aflojeNueva}`;
+    document.body.appendChild (aflojeh2)
+
 // crea el objeto rutinaNueva
-    const rutinaNueva= new Rutina (nombre, entrada, bloque1, bloque2, bloque3, bloque4, bloque5, bloque6, afloje);
+    const rutinaNueva= new Rutina (tituloNueva, entradaNueva, bloque1Nueva, bloque2Nueva, bloque3Nueva, bloque4Nueva, bloque5Nueva, bloque6Nueva, aflojeNueva);
 //la agrego al array rutinaS
     rutinaS.push(rutinaNueva);
-// y se muestra por consola 
-    console.log (rutinaNueva);
-
-    // y por DOM
-    const listado=document.createElement("ul")
-    listado.innerHTML=`- Nombre de tu rutina: ${rutinaNueva.aNombre} </br>
-                        - La entrada en calor es de: ${rutinaNueva.bEntrada}</br>
-                        - Bloque 1: ${rutinaNueva.bloque1}</br>
-                        - Bloque 2: ${rutinaNueva.bloque2}</br>
-                        - Bloque 3: ${rutinaNueva.bloque3}</br>
-                        - Bloque 4: ${rutinaNueva.bloque4}</br>
-                        - Bloque 5: ${rutinaNueva.bloque5}</br>
-                        - Bloque 6: ${rutinaNueva.bloque6}</br>
-                        - Afloje: ${rutinaNueva.cAfloje} `
-    document.body.appendChild (listado);
-   }   
+    console.log (rutinaNueva)
+    console.log (rutinaS)
+}
 
 
-
-
-
-
-// boton 3. buscar rutinas que contengan palabra clave, ej: espalda.
+// BOTON 3. buscar rutinas que contengan palabra clave, ej: espalda.
 
 let botonBuscar = document.getElementById ("botonBuscar");
-botonBuscar.innerHTML = "Buscar rutina";
-botonBuscar.addEventListener ("click", ()=>{buscarRutina()})
+    botonBuscar.innerHTML = "Buscar rutina";
+    botonBuscar.addEventListener ("click", (e)=>{
+        mostrarInput(),
+        mostrarBusqueda(),
+        e.preventDefault()
+  })
 
+
+
+function mostrarInput(){
+    let mostrarInput= document.createElement ("input")
+        mostrarInput.setAttribute ("id", "inputBuscar")
+        mostrarInput.setAttribute ("placeholder", "buscar palabra clave")
+        document.body.appendChild (mostrarInput) 
+
+    let noMostrarMenuArmar=document.getElementById ("formularioArmarRutina")
+        noMostrarMenuArmar.setAttribute ("style", "display:none")
+
+ }
+
+function mostrarBusqueda(){
+    let botonBusqueda = document.createElement ("button")
+        document.body.appendChild (botonBusqueda)
+       
+        botonBusqueda.innerHTML = "Buscar";
+
+        botonBusqueda.addEventListener ("click", ()=>{
+            buscarRutina()
+            })
 function buscarRutina (){
-    const buscar= prompt ("Elige una palabra clave");
-    const encontrada= rutinaS.filter ((rutina)=>rutina.bloque1.indexOf(buscar)!==-1 ||
+    let buscar=  document.getElementById ("inputBuscar").value;
+    console.log(buscar) //para ver si funciona
+
+    let encontrada= rutinaS.filter ((rutina)=>rutina.bloque1.indexOf(buscar)!==-1 ||
                                                 rutina.bloque2.indexOf(buscar)!==-1 ||
                                                 rutina.bloque2.indexOf(buscar)!==-1 || 
                                                 rutina.bloque3.indexOf(buscar)!==-1 || 
                                                 rutina.bloque4.indexOf(buscar)!==-1 || 
                                                 rutina.bloque5.indexOf(buscar)!==-1 ||  
                                                 rutina.bloque6.indexOf(buscar)!==-1);
-    console.log (encontrada);
+    console.log (encontrada); // para ver si funciona
 
-//para verlas en DOM:    
-    encontrada.forEach ((buscadas)=>{
-    const encontradas=document.createElement("ul")
-    encontradas.innerHTML=`-  ${buscadas.aNombre}</br>
-                        -  ${buscadas.bEntrada}</br>
-                        -  ${buscadas.bloque1}</br>
-                        -  ${buscadas.bloque2}</br>
-                        -  ${buscadas.bloque3}</br>
-                        -  ${buscadas.bloque4}</br>
-                        -  ${buscadas.bloque5}</br>
-                        -  ${buscadas.bloque6}</br>
-                        -  ${buscadas.cAfloje} `
-    document.body.appendChild (encontradas);
-    encontradas.setAttribute ("style", "margin: 2rem")
+function listarEncontradas() {
+
+    let listadoEncontradas = document.createElement ("table");
+    listadoEncontradas.innerHTML="";
+    listadoEncontradas.setAttribute ("id", "tablaRutinasEncontradas")
+
+    const tablaHead2 = document.createElement("tr");
+
+    const tablaTitulo2 = document.createElement("th");
+        tablaTitulo2.innerHTML="Título de la rutina";
+        tablaHead2.appendChild(tablaTitulo2);
+
+    const tablaEntrada2 = document.createElement("th");
+        tablaEntrada2.innerHTML="Entrada en calor";
+        tablaHead2.appendChild(tablaEntrada2);   
+
+    const tablaBloque12 = document.createElement("th");
+        tablaBloque12.innerHTML="Bloque 1 ";
+        tablaHead2.appendChild(tablaBloque12);
+
+    const tablaBloque22 = document.createElement("th");
+        tablaBloque22.innerHTML="Bloque 2 ";
+        tablaHead2.appendChild(tablaBloque22);
+
+    const tablaBloque32 = document.createElement("th");
+        tablaBloque32.innerHTML="Bloque 3 ";
+        tablaHead2.appendChild(tablaBloque32);
+
+    const tablaBloque42 = document.createElement("th");
+        tablaBloque42.innerHTML="Bloque 4 ";
+        tablaHead2.appendChild(tablaBloque42);
+
+    const tablaBloque52 = document.createElement("th");
+        tablaBloque52.innerHTML="Bloque 5 ";
+        tablaHead2.appendChild(tablaBloque52);
+
+    const tablaBloque62 = document.createElement("th");
+        tablaBloque62.innerHTML="Bloque 6 ";
+        tablaHead2.appendChild(tablaBloque62);
+
+    const tablaAfloje2 = document.createElement("th");
+        tablaAfloje2.innerHTML="Afloje ";
+        tablaHead2.appendChild(tablaAfloje2);
+        
+    listadoEncontradas.appendChild (tablaHead2);
+
+    encontrada.forEach ((buscar)=>{
+        const tablaRow2 = document.createElement("tr");
+
+        let tablaTd2 = document.createElement("td");
+        tablaTd2.innerHTML=`${buscar.Nombre}`;
+        tablaRow2.appendChild(tablaTd2)
+        
+        tablaTd2 = document.createElement("td");
+        tablaTd2.innerHTML=`${buscar.Entrada}`;
+        tablaRow2.appendChild(tablaTd2)
+
+        tablaTd2 = document.createElement("td");
+        tablaTd2.innerHTML=`${buscar.bloque1}`;
+        tablaRow2.appendChild(tablaTd2)
+
+        tablaTd2 = document.createElement("td");
+        tablaTd2.innerHTML=`${buscar.bloque2}`;
+        tablaRow2.appendChild(tablaTd2)
+
+        tablaTd2 = document.createElement("td");
+        tablaTd2.innerHTML=`${buscar.bloque3}`;
+        tablaRow2.appendChild(tablaTd2)
+
+        tablaTd2 = document.createElement("td");
+        tablaTd2.innerHTML=`${buscar.bloque4}`;
+        tablaRow2.appendChild(tablaTd2)
+
+        tablaTd2 = document.createElement("td");
+        tablaTd2.innerHTML=`${buscar.bloque5}`;
+        tablaRow2.appendChild(tablaTd2);
+
+        tablaTd2 = document.createElement("td");
+        tablaTd2.innerHTML=`${buscar.bloque6}`;
+        tablaRow2.appendChild(tablaTd2)
+        
+        tablaTd2 = document.createElement("td");
+        tablaTd2.innerHTML=`${buscar.Afloje}`;
+        tablaRow2.appendChild(tablaTd2)
+
+        listadoEncontradas.appendChild (tablaRow2);
+        tablaRow2.setAttribute ("id", "filas")
     })
-} 
-
+    document.body.appendChild (listadoEncontradas);
+}    
+  listarEncontradas();
+}}
 
 
 /* Agos, esto lo dejo comentado porque aun no vimos como hacer las modificaciones en las listas :/

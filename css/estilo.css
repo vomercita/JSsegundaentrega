@@ -69,7 +69,7 @@ label{
     border-radius: 5px;
     text-shadow: 1px 1px 1px rgb(202, 176, 250);
 }
-#tablaRutinasListadas {
+#tablaRutinasListadas, #tablaRutinasEncontradas {
     background-color: rgba(215, 213, 243, 0.466);
     width: 90%;
     margin:auto;
@@ -82,4 +82,20 @@ label{
 #filas:hover {
     background-color: rgba(212, 224, 231, 0.589);
     cursor: pointer;
+}
+#formularioArmarRutina {
+    display: none;
+}
+
+#crudNombre, #convNombre {
+    background-color: rgba(144, 247, 247, 0.575);
+    width: 70%;
+    margin: auto;
+    border-radius: 4px;
+}
+#divDeRutina{
+    background-color:rgba(181, 188, 247, 0.733) ;
+    width: 75%;
+    margin:auto;
+
 }

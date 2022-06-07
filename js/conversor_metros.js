@@ -8,6 +8,13 @@ o bien en una pileta de 25m. de largo.
 y arroja el resultado.
 */
 
+function saludar(){
+    const saludo = document.getElementById ("convNombre");
+    saludo.innerHTML = ` ${localStorage.getItem ("nombre")}<br/>
+                        Elige entre estas dos opciones`
+    }
+saludar();
+    
 const form1= document.getElementById ("formMetrosA");
 
 const piletasA = document.getElementById ("btnMetrosA").addEventListener(
@@ -24,7 +31,7 @@ const metrosA = document.getElementById ("btnPiletasA").addEventListener (
     form1.setAttribute("style", "display:none")       
     }) 
 
-////////////    METROS A PILETAS
+// METROS A PILETAS
 let inputMetrosA= document.getElementById ("inputMetrosA");
 let inputMetrosPileta= document.getElementById ("inputMetrosPileta");
 
@@ -44,7 +51,7 @@ function metrosApiletas(){
                     }
  
  
- //////////// PILETAS A METROS
+ //PILETAS A METROS
     
 let inputPiletasA= document.getElementById ("inputPiletasA");
 let inputMetrosPileta2= document.getElementById ("inputMetrosPileta2");
@@ -61,7 +68,6 @@ function piletasAmetros(){
                         - Largo de la pileta: ${inputMetrosPileta2.value} metros. <br/>
                         - El TOTAL DE METROS a nadar es de: ${metrosTotales} metros.`
     totalMetros.setAttribute ("style", "background-color: rgba(144, 247, 247, 0.575)")
-                    
 }
 
 
