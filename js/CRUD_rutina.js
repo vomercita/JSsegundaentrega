@@ -203,14 +203,12 @@ function mostrarArmada (){
 let botonBuscar = document.getElementById ("botonBuscar");
     botonBuscar.innerHTML = "Buscar rutina";
     botonBuscar.addEventListener ("click", (e)=>{
-        mostrarInput(),
+        mostrarElInput(),
         mostrarBusqueda(),
         e.preventDefault()
   })
 
-
-
-function mostrarInput(){
+function mostrarElInput(){
     let mostrarInput= document.createElement ("input")
         mostrarInput.setAttribute ("id", "inputBuscar")
         mostrarInput.setAttribute ("placeholder", "buscar palabra clave")
@@ -218,7 +216,6 @@ function mostrarInput(){
 
     let noMostrarMenuArmar=document.getElementById ("formularioArmarRutina")
         noMostrarMenuArmar.setAttribute ("style", "display:none")
-
  }
 
 function mostrarBusqueda(){
@@ -228,20 +225,18 @@ function mostrarBusqueda(){
         botonBusqueda.innerHTML = "Buscar";
 
         botonBusqueda.addEventListener ("click", ()=>{
-            buscarRutina()
+            buscarRutina();
             })
 function buscarRutina (){
     let buscar=  document.getElementById ("inputBuscar").value;
-    console.log(buscar) //para ver si funciona
 
-    let encontrada= rutinaS.filter ((rutina)=>rutina.bloque1.indexOf(buscar)!==-1 ||
-                                                rutina.bloque2.indexOf(buscar)!==-1 ||
-                                                rutina.bloque2.indexOf(buscar)!==-1 || 
-                                                rutina.bloque3.indexOf(buscar)!==-1 || 
-                                                rutina.bloque4.indexOf(buscar)!==-1 || 
-                                                rutina.bloque5.indexOf(buscar)!==-1 ||  
-                                                rutina.bloque6.indexOf(buscar)!==-1);
-    console.log (encontrada); // para ver si funciona
+    let encontrada= rutinaS.filter ((rutina)=>rutina.bloque1.toLowerCase().indexOf(buscar.toLowerCase())!==-1 ||
+                                                rutina.bloque2.toLowerCase().indexOf(buscar.toLowerCase())!==-1 ||
+                                                rutina.bloque2.toLowerCase().indexOf(buscar.toLowerCase())!==-1 || 
+                                                rutina.bloque3.toLowerCase().indexOf(buscar.toLowerCase())!==-1 || 
+                                                rutina.bloque4.toLowerCase().indexOf(buscar.toLowerCase())!==-1 || 
+                                                rutina.bloque5.toLowerCase().indexOf(buscar.toLowerCase())!==-1 ||  
+                                                rutina.bloque6.toLowerCase().indexOf(buscar.toLowerCase())!==-1 );
 
 function listarEncontradas() {
 
@@ -335,151 +330,3 @@ function listarEncontradas() {
 }    
   listarEncontradas();
 }}
-
-
-/* Agos, esto lo dejo comentado porque aun no vimos como hacer las modificaciones en las listas :/
-
-// opcion 4 modificar uno o varios bloques de una rutina existente
-//1° buscar la rutina. 2° elegir el bloque a modificar. 3° modificar ese bloque elegido. 4° elegir otro bloque o salir
-
-function modificarRutina (){
-    //1° buscar la rutina
-    let listadoModificables= Number (prompt (`Elige la rutina a modificar: 
-                                                    1. Resistencia Mojarrita
-                                                    2. Resistencia Delfín
-                                                    3. Resistencia Tiburón
-                                                    4. Velocidad Mojarrita
-                                                    5. Velocidad Delfín
-                                                    6. Velocidad Tiburón
-                                                    7. Rutina Mixta Mojarrita
-                                                    8. Rutina Mixta Delfín
-                                                    9. Rutina Mixta Tiburón
-                                                    10. Volver a menú principal `));
-    switch (listadoModificables) {
-            case 1:
-                listadoModificables = rutinaS [0];
-                alert ("elegiste modificar la rutina Resistencia Mojarrita")
-                modificarBloque();
-                console.log (rutinaResistencia1)               
-                break;
-
-            case 2:
-                listadoModificables = rutinaS [1]
-                alert ("elegiste modificar la rutina Resistencia Delfín")
-                modificarBloque();
-                console.log (rutinaResistencia2);                
-                break;        
-
-            case 3:
-                listadoModificables = rutinaS [2]
-                alert ("elegiste modificar la rutina Resistencia Tiburón")
-                modificarBloque(rutinaResistencia3);
-                console.log (rutinaResistencia3);
-                break;
-
-            case 4:
-                listadoModificables= rutinaS [3]
-                alert ("elegiste modificar la rutina Velocidad Mojarrita")
-                modificarBloque(rutinaVelocidad1);
-                console.log (rutinaVelocidad1);
-                break;    
-
-            case 5:
-                listadoModificables= rutinaS [4]
-                alert ("elegiste modificar la rutina Velocidad Delfín")
-                modificarBloque(rutinaVelocidad2);
-                console.log (rutinaVelocidad2);
-                break;
-
-            case 6:
-                listadoModificables =rutinaS [5]
-                alert ("elegiste modificar la rutina Velocidad Tiburón")
-                modificarBloque(rutinaVelocidad3);
-                console.log (rutinaVelocidad3);
-                break;
-
-            case 7:
-                listadoModificables =rutinaS [6] 
-                alert ("elegiste modificar la rutina Mixta de Mojarrita")
-                modificarBloque(rutinaMixta1);
-                console.log (rutinaMixta1)
-                break;    
-
-            case 8: 
-                listadoModificables =rutinaS [7]
-                alert ("elegiste modificar la rutina Mixta de Delfín")
-                modificarBloque(rutinaMixta2);
-                console.log (rutinaMixta2);               
-                break;
-
-            case 9:
-                listadoModificables=rutinaS [8]
-                alert ("elegiste modificar la rutina Mixta de Tiburón")
-                modificarBloque(rutinaMixta3);
-                console.log (rutinaMixta3);
-                break;
-
-            case 10:
-                menuRutina();                       
-                break;  
-
-            default:
-                break;
-        }
-
-    //2° elegir el bloque a modificar y 3°modificarlo
-    function modificarBloque (){
-        let modificar = Number(prompt (`ingresa el bloque de la rutina a modificar:
-                             1. Bloque 1
-                             2. Bloque 2
-                             3. Bloque 3
-                             4. Bloque 4
-                             5. Bloque 5
-                             6. Bloque 6                            
-                             7. Listo`));
-                             
-        switch (modificar) {
-
-        case 1:
-            let nuevoBloque1= prompt ("ingresa el nuevo bloque");
-            listadoModificables.bloque1= nuevoBloque1
-            break;
-
-        case 2:
-            let nuevoBloque2= prompt ("ingresa el nuevo bloque");
-            listadoModificables.bloque2= nuevoBloque2             
-            break;
-
-        case 3:
-            let nuevoBloque3= prompt ("ingresa el nuevo bloque") ;
-            listadoModificables.bloque3= nuevoBloque3           
-            break;
-
-        case 4:
-            let nuevoBloque4= prompt ("ingresa el nuevo bloque") ;
-            listadoModificables.bloque4= nuevoBloque4
-            break;
-            
-        case 5:
-            let nuevoBloque5= prompt ("ingresa el nuevo bloque");
-            listadoModificables.bloque5= nuevoBloque5;
-            break;
-
-        case 6:
-            let nuevoBloque6= prompt ("ingresa el nuevo bloque");
-            listadoModificables.bloque6= nuevoBloque6;    
-            break;
-
-        default:
-            break;
-        }    
-        //4° elegir otro bloque o salir
-        if (modificar!==7) {modificarBloque()}
-        else {}
-               
-    }
-}
-*/
-
-
-

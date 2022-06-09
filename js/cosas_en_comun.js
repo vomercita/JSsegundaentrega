@@ -122,3 +122,4 @@ const rutinaResistencia3 = new Rutina (
 const rutinaS = [rutinaResistencia1, rutinaResistencia2, rutinaResistencia3,
     rutinaVelocidad1,rutinaVelocidad2,rutinaVelocidad3,
     rutinaMixta1, rutinaMixta2, rutinaMixta3];
+

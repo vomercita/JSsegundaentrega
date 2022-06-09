@@ -14,33 +14,25 @@ const btnNombre= document.getElementById ("btnNombre").addEventListener
 
 function saludar(){
     const saludo = document.getElementById ("bienvenida");
-    saludo.innerHTML = `¡¡Bienvenid@ : ${inputNombre.value} !!<br/>`
+    saludo.innerHTML = `¡¡Bienvenid@ : ${inputNombre.value || "Nadador anónimo"} !!<br/>`
 }
 function guardarNombre(){
-    let nombreGuardado= document.getElementById ("inputNombre").value;
+    let nombreGuardado= document.getElementById ("inputNombre").value || `"Nadador anónimo"`;
     localStorage.setItem ("nombre", nombreGuardado);
     localStorage.getItem("nombre")
 }
 
-
 // 2- PREGUNTARLE CUÁNTOS METROS PUEDE NADAR Y COLOCARLO EN CATEGORIA MOJARRITA, DELFIN O TIBURON.
 
 const inputMetros = document.getElementById ("inputMetros");
-
 let rutinaNivel;
 
 function decirNivel(){
     let niveles = document.getElementById ("niveles");
 
-    if ((inputMetros.value <=1000) && (inputMetros.value >0)) {
-        rutinaNivel = "Mojarrita";
-    }
-    else if ((inputMetros.value>1000) && (inputMetros.value <2000)) {
-        rutinaNivel = "Delfín";
-    }
-    else if (inputMetros.value>=2000){
-        rutinaNivel = "Tiburón";
-    }
+    ((inputMetros.value <=1000) && (inputMetros.value >=0)) &&(rutinaNivel = "Mojarrita");
+    ((inputMetros.value>1000) && (inputMetros.value <2000)) &&(rutinaNivel = "Delfín");
+    (inputMetros.value>=2000) && (rutinaNivel = "Tiburón");
     niveles.innerHTML = `¡Felicitaciones! eres nivel: ${rutinaNivel}.<br/>`;
 }
 const btnMetros= document.getElementById ("btnMetros").addEventListener
@@ -58,44 +50,24 @@ const btnResistencia= document.getElementById ("btnResistencia").addEventListene
 ("click", (e)=>{
     tipo.innerHTML ="Elegiste una rutina de resistencia";
     e.preventDefault();    
-    if ( rutinaNivel==="Mojarrita"){
-        rutinaTipo.innerHTML= JSON.stringify (rutinaResistencia1);
-      
-    }
-    else if (rutinaNivel==="Delfín"){
-        rutinaTipo.innerHTML= JSON.stringify (rutinaResistencia2);
-
-    }
-    else if(rutinaNivel==="Tiburón"){
-        rutinaTipo.innerHTML= JSON.stringify (rutinaResistencia3);}
-    
+    (rutinaNivel==="Mojarrita") && (rutinaTipo.innerHTML= JSON.stringify (rutinaResistencia1));
+    (rutinaNivel==="Delfín") && (rutinaTipo.innerHTML= JSON.stringify (rutinaResistencia2));
+    (rutinaNivel==="Tiburón") && (rutinaTipo.innerHTML= JSON.stringify (rutinaResistencia3));
 })
 
 const btnVelocidad= document.getElementById ("btnVelocidad").addEventListener
 ("click", (e)=>{
     tipo.innerHTML ="Elegiste una rutina de velocidad";
     e.preventDefault();
-    if ( rutinaNivel==="Mojarrita"){
-        rutinaTipo.innerHTML= JSON.stringify (rutinaVelocidad1);
-    }
-    else if (rutinaNivel==="Delfín"){
-        rutinaTipo.innerHTML= JSON.stringify (rutinaVelocidad2);
-    }
-    else if(rutinaNivel==="Tiburón"){
-        rutinaTipo.innerHTML= JSON.stringify (rutinaVelocidad3);}
+    (rutinaNivel==="Mojarrita") && (rutinaTipo.innerHTML= JSON.stringify (rutinaVelocidad1));
+    (rutinaNivel==="Delfín") && (rutinaTipo.innerHTML= JSON.stringify (rutinaVelocidad2));
+    (rutinaNivel==="Tiburón") && (rutinaTipo.innerHTML= JSON.stringify (rutinaVelocidad3));
 })
-
 const btnMixta= document.getElementById ("btnMixta").addEventListener
 ("click", (e)=>{
     tipo.innerHTML ="Elegiste una rutina mixta";
     e.preventDefault();
-    if ( rutinaNivel==="Mojarrita"){
-        rutinaTipo.innerHTML= JSON.stringify (rutinaMixta1);
-    }
-    else if (rutinaNivel==="Delfín"){
-        rutinaTipo.innerHTML= JSON.stringify (rutinaMixta2);
-    }
-    else if(rutinaNivel==="Tiburón"){
-        rutinaTipo.innerHTML= JSON.stringify (rutinaMixta3);
-    }
+    (rutinaNivel==="Mojarrita") && (rutinaTipo.innerHTML= JSON.stringify (rutinaMixta1));
+    (rutinaNivel==="Delfín") && (rutinaTipo.innerHTML= JSON.stringify (rutinaMixta2));
+    (rutinaNivel==="Tiburón") && (rutinaTipo.innerHTML= JSON.stringify (rutinaMixta3));
 })
