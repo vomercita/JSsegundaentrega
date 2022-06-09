@@ -44,9 +44,9 @@ function metrosApiletas(){
     const totalPiletas = document.getElementById ("totalPiletas");
     totalPiletas.innerHTML = 
     `CONVERSOR DE METROS A PILETAS: <br/>
-                        - Metros a nadar: ${inputMetrosA.value} metros. <br/>
-                        - Largo de la pileta: ${inputMetrosPileta.value } metros. <br/>
-                        - El TOTAL DE PILETAS a nadar es de ${piletasTotales}`
+                        - Metros a nadar: ${inputMetrosA.value || 0} metros. <br/>
+                        - Largo de la pileta: ${inputMetrosPileta.value || 0} metros. <br/>
+                        - El TOTAL DE PILETAS a nadar es de ${piletasTotales || 0}`
     totalPiletas.setAttribute ("style", "background-color: rgba(144, 247, 247, 0.575)")
                     }
  
@@ -64,9 +64,9 @@ function piletasAmetros(){
     let metrosTotales= parseInt(inputPiletasA.value*inputMetrosPileta2.value);
     const totalMetros= document.getElementById ("totalMetros");
     totalMetros.innerHTML = ` CONVERSOR DE PILETAS A METROS: <br/> 
-                        - Piletas a nadar: ${inputPiletasA.value} <br/>  
-                        - Largo de la pileta: ${inputMetrosPileta2.value} metros. <br/>
-                        - El TOTAL DE METROS a nadar es de: ${metrosTotales} metros.`
+                        - Piletas a nadar: ${inputPiletasA.value || 0} <br/>  
+                        - Largo de la pileta: ${inputMetrosPileta2.value || 0} metros. <br/>
+                        - El TOTAL DE METROS a nadar es de: ${metrosTotales || 0} metros.`
     totalMetros.setAttribute ("style", "background-color: rgba(144, 247, 247, 0.575)")
 }
 
