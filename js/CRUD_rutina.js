@@ -7,7 +7,7 @@
 //Nombre guardado en storage
 function saludar(){
     const saludo = document.getElementById ("crudNombre");
-    saludo.innerHTML = ` ${localStorage.getItem ("nombre")}<br/>
+    saludo.innerHTML = ` ${localStorage.getItem ("nombre") || "Nadador anónimo"}<br/>
                         Elige alguna de estas opciones`
     }
 saludar();

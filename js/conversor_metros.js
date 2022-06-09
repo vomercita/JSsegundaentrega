@@ -10,7 +10,7 @@ y arroja el resultado.
 
 function saludar(){
     const saludo = document.getElementById ("convNombre");
-    saludo.innerHTML = ` ${localStorage.getItem ("nombre")}<br/>
+    saludo.innerHTML = ` ${localStorage.getItem ("nombre")|| "Nadador anónimo"}<br/>
                         Elige entre estas dos opciones`
     }
 saludar();
