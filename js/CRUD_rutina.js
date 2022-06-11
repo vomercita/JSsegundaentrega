@@ -21,8 +21,14 @@ botonListar.addEventListener ("click", (e)=>{
     listarRutina(),
     e.preventDefault()
 });
+botonListar.addEventListener("mouseover", ()=>{
+    Toastify({
+       text: "Vas a ver el listado de todas las rutinas", 
+       duration: 3000,
+     }).showToast();
+  })
 
-function listarRutina() {
+  function listarRutina() {
 
     let listadoRutinas = document.createElement ("table");
     listadoRutinas.innerHTML="";
@@ -128,6 +134,12 @@ botonArmar.addEventListener ("click", (e)=> {
     mostrarMenuArmar(), 
     e.preventDefault()
 }); 
+botonArmar.addEventListener("mouseover", ()=>{
+    Toastify({
+       text: "Armá tu propia rutina y agregala al listado", 
+       duration: 3000,
+     }).showToast();
+  })
 
 function mostrarMenuArmar(){
     let mostrarMenu=document.getElementById ("formularioArmarRutina")
@@ -206,6 +218,12 @@ let botonBuscar = document.getElementById ("botonBuscar");
         mostrarElInput(),
         mostrarBusqueda(),
         e.preventDefault()
+  })
+botonBuscar.addEventListener("mouseover", ()=>{
+    Toastify({
+       text: "Buscá una rutina poniendo una palabra clave, por ejemplo: espalda, manopla, crol", 
+       duration: 3000,
+     }).showToast();
   })
 
 function mostrarElInput(){

@@ -10,16 +10,22 @@
 const inputNombre = document.getElementById ("inputNombre");
 
 const btnNombre= document.getElementById ("btnNombre").addEventListener
-("click", (e)=>{saludar (), e.preventDefault(), guardarNombre()})
+("click", (e)=>{e.preventDefault(), guardarNombre()})
 
-function saludar(){
-    const saludo = document.getElementById ("bienvenida");
-    saludo.innerHTML = `¡¡Bienvenid@ : ${inputNombre.value || "Nadador anónimo"} !!<br/>`
-}
 function guardarNombre(){
     let nombreGuardado= document.getElementById ("inputNombre").value || `"Nadador anónimo"`;
     localStorage.setItem ("nombre", nombreGuardado);
     localStorage.getItem("nombre")
+    
+    function sweet(){
+        swal({
+            title:`¡¡Bienvenid@ ${nombreGuardado} !!`,
+            button: 'GRACIAS',
+            timer: 5000,
+            })
+    }
+    sweet()
+
 }
 
 // 2- PREGUNTARLE CUÁNTOS METROS PUEDE NADAR Y COLOCARLO EN CATEGORIA MOJARRITA, DELFIN O TIBURON.
@@ -27,18 +33,27 @@ function guardarNombre(){
 const inputMetros = document.getElementById ("inputMetros");
 let rutinaNivel;
 
-function decirNivel(){
-    let niveles = document.getElementById ("niveles");
-
-    ((inputMetros.value <=1000) && (inputMetros.value >=0)) &&(rutinaNivel = "Mojarrita");
-    ((inputMetros.value>1000) && (inputMetros.value <2000)) &&(rutinaNivel = "Delfín");
-    (inputMetros.value>=2000) && (rutinaNivel = "Tiburón");
-    niveles.innerHTML = `¡Felicitaciones! eres nivel: ${rutinaNivel}.<br/>`;
-}
 const btnMetros= document.getElementById ("btnMetros").addEventListener
 ("click", (e)=>{decirNivel (), e.preventDefault()})
 
+function decirNivel(){
+    ((inputMetros.value <=1000) && (inputMetros.value >=0)) &&(rutinaNivel = "Mojarrita");
+    ((inputMetros.value>1000) && (inputMetros.value <2000)) &&(rutinaNivel = "Delfín");
+    (inputMetros.value>=2000) && (rutinaNivel = "Tiburón");
+    (inputMetros.value=="") && (rutinaNivel= "???")
 
+function sweet(){
+    swal({
+        title:`¡¡Felicitaciones!!`,
+        text: `Eres nivel "${rutinaNivel}"`,
+        button: 'GENIAL',
+        timer: 5000,
+        })
+    }   
+    sweet()
+}
+
+ 
 //3- DARLE 3 OPCIONES DE RUTINA PARA QUE ELIJA: VELOCIDAD, RESISTENCIA O MIXTA. 
 //4- SE MUESTRA LA RUTINA CORRESPONDIENTE A LAS ELECCIONES DEL USUARIO (NIVEL Y TIPO).
 
@@ -48,7 +63,15 @@ document.body.appendChild (rutinaTipo)
 
 const btnResistencia= document.getElementById ("btnResistencia").addEventListener
 ("click", (e)=>{
-    tipo.innerHTML ="Elegiste una rutina de resistencia";
+    function sweet(){
+        swal({
+            title:`¡Te ha tocado esta rutina de resistencia!`,
+            button: 'QUIERO VER!',
+            timer: 5000,
+            icon: "img/flecha.png"
+            })
+        }   
+        sweet()
     e.preventDefault();    
     (rutinaNivel==="Mojarrita") && (rutinaTipo.innerHTML= JSON.stringify (rutinaResistencia1));
     (rutinaNivel==="Delfín") && (rutinaTipo.innerHTML= JSON.stringify (rutinaResistencia2));
@@ -57,7 +80,15 @@ const btnResistencia= document.getElementById ("btnResistencia").addEventListene
 
 const btnVelocidad= document.getElementById ("btnVelocidad").addEventListener
 ("click", (e)=>{
-    tipo.innerHTML ="Elegiste una rutina de velocidad";
+    function sweet(){
+        swal({
+            title:`¡Te ha tocado esta rutina de velocidad!`,
+            button: 'QUIERO VER',
+            timer: 5000,
+            icon: "img/flecha.png",
+            })
+        }   
+        sweet()
     e.preventDefault();
     (rutinaNivel==="Mojarrita") && (rutinaTipo.innerHTML= JSON.stringify (rutinaVelocidad1));
     (rutinaNivel==="Delfín") && (rutinaTipo.innerHTML= JSON.stringify (rutinaVelocidad2));
@@ -65,7 +96,15 @@ const btnVelocidad= document.getElementById ("btnVelocidad").addEventListener
 })
 const btnMixta= document.getElementById ("btnMixta").addEventListener
 ("click", (e)=>{
-    tipo.innerHTML ="Elegiste una rutina mixta";
+    function sweet(){
+        swal({
+            title:`¡Te ha tocado esta rutina mixta!`,
+            button: 'QUIERO VER',
+            timer: 5000,
+            icon: "img/flecha.png"
+            })
+        }   
+        sweet()
     e.preventDefault();
     (rutinaNivel==="Mojarrita") && (rutinaTipo.innerHTML= JSON.stringify (rutinaMixta1));
     (rutinaNivel==="Delfín") && (rutinaTipo.innerHTML= JSON.stringify (rutinaMixta2));

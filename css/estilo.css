@@ -45,7 +45,7 @@
 #formMetrosA, #formPiletasA{
     display:none;
 }
-button {
+button, .swal-button {
     background-color: rgb(3, 3, 77);
     color: rgba(181, 188, 247, 0.733);
     text-shadow: 1px 1px 1px rgba(202, 176, 250, 0.308);
@@ -57,7 +57,7 @@ button {
     padding: 0.5rem;
    
 }
-button:hover {
+button:hover, .swal-button:hover {
     background-color: black;
     color: rgb(217, 217, 235);
     cursor: pointer;
@@ -86,7 +86,6 @@ label{
 #formularioArmarRutina {
     display: none;
 }
-
 #crudNombre, #convNombre {
     background-color: rgba(144, 247, 247, 0.575);
     width: 70%;
@@ -97,5 +96,15 @@ label{
     background-color:rgba(181, 188, 247, 0.733) ;
     width: 75%;
     margin:auto;
+    border-radius: 4px;
+}
+.swal-overlay {
+    background-color: rgba(81, 141, 219, 0.45);
+}
+.swal-modal {
+    background-color: rgb(197, 195, 255);
+}
 
+.swal-text{
+    font-size: 1.8rem;
 }
