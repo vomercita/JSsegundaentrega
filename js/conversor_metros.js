@@ -37,7 +37,9 @@ let inputMetrosA= document.getElementById ("inputMetrosA");
 let inputMetrosPileta= document.getElementById ("inputMetrosPileta");
 
 const botonEnviarMetrosA = document.getElementById ("botonEnviarMetrosA").addEventListener (
-    "click", (e)=> {metrosApiletas(), e.preventDefault()}
+    "click", (e)=> {
+        metrosApiletas(), 
+        e.preventDefault()}
     );
 
 function metrosApiletas(){
@@ -49,7 +51,14 @@ function metrosApiletas(){
                         - Largo de la pileta: ${inputMetrosPileta.value || 0} metros. <br/>
                         - El TOTAL DE PILETAS a nadar es de ${piletasTotales || 0}`
     totalPiletas.setAttribute ("style", "background-color: rgba(144, 247, 247, 0.575)")
-                    }
+
+    function sweetMetros (){
+        swal({
+         title:`- El TOTAL DE PILETAS a nadar es de ${piletasTotales || 0}`,
+         timer: 3000,})
+     }; 
+     sweetMetros()
+}
  
  
  //PILETAS A METROS
@@ -58,7 +67,9 @@ let inputPiletasA= document.getElementById ("inputPiletasA");
 let inputMetrosPileta2= document.getElementById ("inputMetrosPileta2");
 
 const botonEnviarPiletasA = document.getElementById ("botonEnviarPiletasA").addEventListener (
-    "click", (e)=>{piletasAmetros(), e.preventDefault()}
+    "click", (e)=>{
+        piletasAmetros(), 
+        e.preventDefault()}
 );
 
 function piletasAmetros(){
@@ -69,6 +80,13 @@ function piletasAmetros(){
                         - Largo de la pileta: ${inputMetrosPileta2.value || 0} metros. <br/>
                         - El TOTAL DE METROS a nadar es de: ${metrosTotales || 0} metros.`
     totalMetros.setAttribute ("style", "background-color: rgba(144, 247, 247, 0.575)")
+
+    function sweetPiletas (){
+        swal({
+         title:`- El TOTAL DE METROS a nadar es de: ${metrosTotales || 0} metros.`,
+         timer: 3000,})
+     }; 
+     sweetPiletas()
 }
 
 
