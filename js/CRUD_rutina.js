@@ -24,7 +24,10 @@ botonListar.addEventListener ("click", (e)=>{
 botonListar.addEventListener("mouseover", ()=>{
     Toastify({
        text: "Vas a ver el listado de todas las rutinas", 
-       duration: 3000,
+       duration: 2000,
+       gravity: "bottom",
+       backgroundColor: "linear-gradient(0deg, rgba(34,193,195,0.4990371148459384) 0%, rgba(100,118,225,0.5214460784313726) 51%)",
+
      }).showToast();
   })
 
@@ -78,11 +81,11 @@ botonListar.addEventListener("mouseover", ()=>{
         const tablaRow = document.createElement("tr");
 
         let tablaTd = document.createElement("td");
-        tablaTd.innerHTML=`${rutina.Nombre}`;
+        tablaTd.innerHTML=`${rutina.nombre}`;
         tablaRow.appendChild(tablaTd)
         
         tablaTd = document.createElement("td");
-        tablaTd.innerHTML=`${rutina.Entrada}`;
+        tablaTd.innerHTML=`${rutina.entrada}`;
         tablaRow.appendChild(tablaTd)
 
         tablaTd = document.createElement("td");
@@ -110,7 +113,7 @@ botonListar.addEventListener("mouseover", ()=>{
         tablaRow.appendChild(tablaTd)
         
         tablaTd = document.createElement("td");
-        tablaTd.innerHTML=`${rutina.Afloje}`;
+        tablaTd.innerHTML=`${rutina.afloje}`;
         tablaRow.appendChild(tablaTd)
 
         listadoRutinas.appendChild (tablaRow);
@@ -137,7 +140,10 @@ botonArmar.addEventListener ("click", (e)=> {
 botonArmar.addEventListener("mouseover", ()=>{
     Toastify({
        text: "Armá tu propia rutina y agregala al listado", 
-       duration: 3000,
+       duration: 2000,
+       gravity: "bottom",
+       backgroundColor: "linear-gradient(0deg, rgba(34,193,195,0.4990371148459384) 0%, rgba(100,118,225,0.5214460784313726) 51%)",
+
      }).showToast();
   })
 
@@ -222,7 +228,9 @@ let botonBuscar = document.getElementById ("botonBuscar");
 botonBuscar.addEventListener("mouseover", ()=>{
     Toastify({
        text: "Buscá una rutina poniendo una palabra clave, por ejemplo: espalda, manopla, crol", 
-       duration: 3000,
+       duration: 1500,
+       gravity: "bottom",
+       backgroundColor: "linear-gradient(0deg, rgba(34,193,195,0.4990371148459384) 0%, rgba(100,118,225,0.5214460784313726) 51%)"
      }).showToast();
   })
 
@@ -306,11 +314,11 @@ function listarEncontradas() {
         const tablaRow2 = document.createElement("tr");
 
         let tablaTd2 = document.createElement("td");
-        tablaTd2.innerHTML=`${buscar.Nombre}`;
+        tablaTd2.innerHTML=`${buscar.nombre}`;
         tablaRow2.appendChild(tablaTd2)
         
         tablaTd2 = document.createElement("td");
-        tablaTd2.innerHTML=`${buscar.Entrada}`;
+        tablaTd2.innerHTML=`${buscar.entrada}`;
         tablaRow2.appendChild(tablaTd2)
 
         tablaTd2 = document.createElement("td");
@@ -338,7 +346,7 @@ function listarEncontradas() {
         tablaRow2.appendChild(tablaTd2)
         
         tablaTd2 = document.createElement("td");
-        tablaTd2.innerHTML=`${buscar.Afloje}`;
+        tablaTd2.innerHTML=`${buscar.afloje}`;
         tablaRow2.appendChild(tablaTd2)
 
         listadoEncontradas.appendChild (tablaRow2);

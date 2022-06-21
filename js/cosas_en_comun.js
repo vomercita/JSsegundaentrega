@@ -8,15 +8,15 @@ const x10 = ["10x 20","10x 40","10x 80"];
 
 class Rutina{
     constructor (nombre, entrada, bloque1, bloque2, bloque3, bloque4, bloque5, bloque6, afloje) {
-        this.Nombre=nombre;
-        this.Entrada=entrada;
+        this.nombre=nombre;
+        this.entrada=entrada;
         this.bloque1=bloque1;
         this.bloque2=bloque2;
         this.bloque3=bloque3;
         this.bloque4=bloque4;
         this.bloque5=bloque5;
         this.bloque6=bloque6;
-        this.Afloje=afloje;
+        this.afloje=afloje;
     }
 }  
 const rutinaResistencia1 = new Rutina (   

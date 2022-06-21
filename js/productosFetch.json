@@ -1,0 +1,57 @@
+[
+{
+    "nombre":"Aletas",
+    "foto":"../img/aletas.webp",
+    "precio":"desde $650",
+    "descripcion":"útiles para practicar patada"
+},
+
+{
+    "nombre":"Antiparras",
+    "foto":"../img/antiparras.webp",
+    "precio":"desde $350",
+    "descripcion":"necesarias para ver por dónde vamos"
+},
+{
+    "nombre":"Gorra",
+    "foto":"../img/gorra.webp",
+    "precio":"desde $250",
+    "descripcion":"de lycra, silicona o goma"
+}
+,
+{
+    "nombre":"Malla de hombre",
+    "foto":"../img/mallahombre.webp",
+    "precio":"desde $1000",
+    "descripcion":"las mejores son de estos modelos, para disminuir la resistencia"
+    }
+,
+{
+    "nombre":"Malla de mujer",
+    "foto":"../img/mallamujer.webp",
+    "precio":"desde $1500",
+    "descripcion":"hay modelos clásicos, con piernas, de dos piezas"
+    }
+,
+{
+    "nombre":"Manoplas",
+    "foto":"../img/manoplas.webp",
+    "precio":"desde $450",
+    "descripcion":"útiles para generar resistencia y mejorar el empuje"
+    }
+,
+{
+    "nombre":"Pullboy",
+    "foto":"../img/pullboy.webp",
+    "precio":"desde $250",
+    "descripcion":"para mejorar la brazada sin pensar en la patada"
+    }
+,
+{
+    "nombre":"Toallón",
+    "foto":"../img/toallon.webp",
+    "precio":"desde $500",
+    "descripcion":"de microfibra el mejor material"
+    }            
+
+]

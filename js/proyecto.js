@@ -106,7 +106,5 @@ const btnMixta= document.getElementById ("btnMixta").addEventListener
         }   
         sweet()
     e.preventDefault();
-    (rutinaNivel==="Mojarrita") && (rutinaTipo.innerHTML= JSON.stringify (rutinaMixta1));
-    (rutinaNivel==="Delfín") && (rutinaTipo.innerHTML= JSON.stringify (rutinaMixta2));
-    (rutinaNivel==="Tiburón") && (rutinaTipo.innerHTML= JSON.stringify (rutinaMixta3));
-})
+    })
+

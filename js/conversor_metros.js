@@ -11,7 +11,7 @@ y arroja el resultado.
 function saludar(){
     const saludo = document.getElementById ("convNombre");
     saludo.innerHTML = ` ${localStorage.getItem ("nombre")|| "Nadador anónimo"}<br/>
-                        Elige entre estas dos opciones`
+                        Elige entre estas tres opciones`
 }
 saludar();
 
@@ -90,3 +90,32 @@ function piletasAmetros(){
 }
 
 
+
+
+
+function random() {
+    const botonRandom = document.createElement("button")
+    botonRandom.innerHTML= "Frase Ramdom"
+    botonRandom.addEventListener("click", () => {
+ 
+       fraseRandom();
+    })
+    document.body.appendChild(botonRandom)
+ }
+ random()
+ 
+ function fraseRandom() {
+    fetch("https://catfact.ninja/fact")
+       .then((response) => response.json())
+       .then((json) => mostrarFrase(json))
+ }
+ 
+ function mostrarFrase(frase) {
+    
+       const divFrase = document.createElement("div");
+       divFrase.innerHTML = `${frase.fact}                
+       `
+       divFrase.setAttribute ("id", "divFrase")
+       document.body.appendChild(divFrase)
+}
+ 

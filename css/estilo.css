@@ -10,16 +10,8 @@
 .navbar{
     background-color: rgb(3, 3, 77);
 }
-.nav-link, .navbar-toggler {
-    color: rgb(194, 184, 230); 
-}
 .nav-link:hover {
-    color: rgb(217, 217, 235);
     font-weight: bolder;
-}
-#hamburguesa {
-    color: rgb(8, 6, 14);
-    background-color: rgb(164, 176, 231); 
 }
 #index {
     background-image: url(../img/1.webp); 
@@ -55,7 +47,6 @@ button, .swal-button {
     font-size: 1rem;
     font-family: "Architects Daughter", cursive;
     padding: 0.5rem;
-   
 }
 button:hover, .swal-button:hover {
     background-color: black;
@@ -92,7 +83,7 @@ label{
     margin: auto;
     border-radius: 4px;
 }
-#divDeRutina{
+#divDeRutina, #divFrase{
     background-color:rgba(181, 188, 247, 0.733) ;
     width: 75%;
     margin:auto;
@@ -108,3 +99,4 @@ label{
 .swal-text{
     font-size: 1.8rem;
 }
+
