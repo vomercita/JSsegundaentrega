@@ -73,9 +73,9 @@ const btnResistencia= document.getElementById ("btnResistencia").addEventListene
         }   
         sweet()
     e.preventDefault();    
-    (rutinaNivel==="Mojarrita") && (rutinaTipo.innerHTML= JSON.stringify (rutinaResistencia1));
-    (rutinaNivel==="Delfín") && (rutinaTipo.innerHTML= JSON.stringify (rutinaResistencia2));
-    (rutinaNivel==="Tiburón") && (rutinaTipo.innerHTML= JSON.stringify (rutinaResistencia3));
+    (rutinaNivel==="Mojarrita") && (rutinaTipo.innerHTML= JSON.stringify (rutinaResistencia1, null, '<br>')) ;
+    (rutinaNivel==="Delfín") && (rutinaTipo.innerHTML= JSON.stringify (rutinaResistencia2, null, '<br>'));
+    (rutinaNivel==="Tiburón") && (rutinaTipo.innerHTML= JSON.stringify (rutinaResistencia3, null, '<br>'));
 })
 
 const btnVelocidad= document.getElementById ("btnVelocidad").addEventListener
@@ -90,9 +90,9 @@ const btnVelocidad= document.getElementById ("btnVelocidad").addEventListener
         }   
         sweet()
     e.preventDefault();
-    (rutinaNivel==="Mojarrita") && (rutinaTipo.innerHTML= JSON.stringify (rutinaVelocidad1));
-    (rutinaNivel==="Delfín") && (rutinaTipo.innerHTML= JSON.stringify (rutinaVelocidad2));
-    (rutinaNivel==="Tiburón") && (rutinaTipo.innerHTML= JSON.stringify (rutinaVelocidad3));
+    (rutinaNivel==="Mojarrita") && (rutinaTipo.innerHTML= JSON.stringify (rutinaVelocidad1, null, '<br>'));
+    (rutinaNivel==="Delfín") && (rutinaTipo.innerHTML= JSON.stringify (rutinaVelocidad2, null, '<br>'));
+    (rutinaNivel==="Tiburón") && (rutinaTipo.innerHTML= JSON.stringify (rutinaVelocidad3, null, '<br>'));
 })
 const btnMixta= document.getElementById ("btnMixta").addEventListener
 ("click", (e)=>{
@@ -106,5 +106,9 @@ const btnMixta= document.getElementById ("btnMixta").addEventListener
         }   
         sweet()
     e.preventDefault();
-    })
+    (rutinaNivel==="Mojarrita") && (rutinaTipo.innerHTML= JSON.stringify (rutinaMixta1, null, '<br>'));
+    (rutinaNivel==="Delfín") && (rutinaTipo.innerHTML= JSON.stringify (rutinaMixta2, null, '<br>'));
+    (rutinaNivel==="Tiburón") && (rutinaTipo.innerHTML= JSON.stringify (rutinaMixta3, null, '<br>'));
+    
 
+})

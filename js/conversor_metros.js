@@ -91,7 +91,7 @@ function piletasAmetros(){
 
 
 
-
+//uso de API externa
 
 function random() {
     const botonRandom = document.createElement("button")

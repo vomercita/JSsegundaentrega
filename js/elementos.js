@@ -8,7 +8,7 @@ function productosFetch (){
 
 function mostrarProductos (productos){
     const divv= document.createElement ("div")
-    divv.setAttribute("style", "background-color:white")
+    divv.setAttribute("id", "divvElementos")
     document.body.appendChild(divv)
 
     productos.forEach (productos=>
@@ -16,12 +16,13 @@ function mostrarProductos (productos){
             const divProductos= document.createElement ("card")
             divProductos.innerHTML= `
             <img src='${productos.foto}'>
+            <br>
             ${productos.nombre}
             <br>
             ${productos.precio}
             <br>
             ${productos.descripcion}
-            <br>
+            <br><br><br><br>
             
         `
        
